@@ -1,0 +1,12 @@
+{
+	"name": "transactionHTTP",
+	"properties": {
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://media.githubusercontent.com/media/Shreyshah0812/Financial-Transactions-azure-Data-Engineering/refs/heads/master/transactions_data.csv",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
