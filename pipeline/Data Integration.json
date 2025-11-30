@@ -1,9 +1,9 @@
 {
-	"name": "pipeline1",
+	"name": "Data Integration",
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "transaction",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
