@@ -1,0 +1,9 @@
+{
+	"name": "financial-transaction-df",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "f61505cc-dc04-4fea-8d9d-adc6dba886eb",
+		"tenantId": "5c087a92-468c-4247-84f1-e9b282dcffa5"
+	}
+}
