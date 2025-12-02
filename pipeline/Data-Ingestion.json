@@ -190,7 +190,14 @@
 			{
 				"name": "mcc_codes",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "cards_data",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -210,11 +217,28 @@
 							"type": "JsonReadSettings"
 						}
 					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
 					"enableStaging": false
 				},
 				"inputs": [
 					{
 						"referenceName": "mcc_codes",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "mcc_codessink",
 						"type": "DatasetReference"
 					}
 				]
