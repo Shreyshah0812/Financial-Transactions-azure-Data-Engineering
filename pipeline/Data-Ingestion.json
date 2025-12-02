@@ -124,7 +124,7 @@
 				]
 			},
 			{
-				"name": "Copy data1",
+				"name": "cards_data",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
