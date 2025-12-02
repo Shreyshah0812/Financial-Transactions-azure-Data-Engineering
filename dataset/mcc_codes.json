@@ -1,0 +1,17 @@
+{
+	"name": "mcc_codes",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "mcc_codesHTTP",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation"
+			}
+		},
+		"schema": {}
+	}
+}
