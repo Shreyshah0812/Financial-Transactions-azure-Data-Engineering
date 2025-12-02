@@ -1,0 +1,12 @@
+{
+	"name": "mcc_codesHTTP",
+	"properties": {
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://github.com/Shreyshah0812/Financial-Transactions-azure-Data-Engineering/raw/refs/heads/master/mcc_codes.json",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
