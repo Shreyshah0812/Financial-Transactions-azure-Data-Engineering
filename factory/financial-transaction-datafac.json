@@ -1,0 +1,9 @@
+{
+	"name": "financial-transaction-datafac",
+	"location": "southcentralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "76918efb-73e3-4c0a-bc91-d758619eabe4",
+		"tenantId": "55e3a33f-916e-4c64-bc65-58f9e712f679"
+	}
+}
