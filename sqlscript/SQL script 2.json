@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 2",
+	"properties": {
+		"content": {
+			"query": "SELECT TOP (100) [id]\n,[client_id]\n,[card_brand]\n,[card_type]\n,[card_number]\n,[expires]\n,[cvv]\n,[has_chip]\n,[num_cards_issued]\n,[credit_limit]\n,[acct_open_date]\n,[year_pin_last_changed]\n,[card_on_dark_web]\n FROM [financialdb].[dbo].[cards_data_transformed];",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "financialdb",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
