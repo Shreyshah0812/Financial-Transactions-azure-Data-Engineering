@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 1",
+	"properties": {
+		"content": {
+			"query": "SELECT TOP (100) [id]\n,[date]\n,[client_id]\n,[card_id]\n,[amount]\n,[use_chip]\n,[merchant_id]\n,[merchant_city]\n,[merchant_state]\n,[zip]\n,[mcc]\n,[errors]\n FROM [financialdb].[dbo].[transactions_transformed];",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

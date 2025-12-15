@@ -1,7 +1,7 @@
 {
-	"name": "transactions_transformed",
+	"name": "cards_data_transformed",
 	"properties": {
-		"Name": "transactions_transformed",
+		"Name": "cards_data_transformed",
 		"EntityType": "TABLE",
 		"Namespace": {
 			"DatabaseName": "financialdb"
@@ -26,19 +26,6 @@
 					"DeltaFormatInvalidMessages": []
 				},
 				{
-					"Name": "date",
-					"OriginDataTypeName": {
-						"TypeName": "timestamp",
-						"IsComplexType": false,
-						"IsNullable": true,
-						"Properties": {
-							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
-							"HIVE_TYPE_STRING": "timestamp"
-						}
-					},
-					"DeltaFormatInvalidMessages": []
-				},
-				{
 					"Name": "client_id",
 					"OriginDataTypeName": {
 						"TypeName": "long",
@@ -51,31 +38,7 @@
 					"DeltaFormatInvalidMessages": []
 				},
 				{
-					"Name": "card_id",
-					"OriginDataTypeName": {
-						"TypeName": "long",
-						"IsComplexType": false,
-						"IsNullable": true,
-						"Properties": {
-							"HIVE_TYPE_STRING": "long"
-						}
-					},
-					"DeltaFormatInvalidMessages": []
-				},
-				{
-					"Name": "amount",
-					"OriginDataTypeName": {
-						"TypeName": "long",
-						"IsComplexType": false,
-						"IsNullable": true,
-						"Properties": {
-							"HIVE_TYPE_STRING": "long"
-						}
-					},
-					"DeltaFormatInvalidMessages": []
-				},
-				{
-					"Name": "use_chip",
+					"Name": "card_brand",
 					"OriginDataTypeName": {
 						"TypeName": "string",
 						"IsComplexType": false,
@@ -88,19 +51,7 @@
 					"DeltaFormatInvalidMessages": []
 				},
 				{
-					"Name": "merchant_id",
-					"OriginDataTypeName": {
-						"TypeName": "long",
-						"IsComplexType": false,
-						"IsNullable": true,
-						"Properties": {
-							"HIVE_TYPE_STRING": "long"
-						}
-					},
-					"DeltaFormatInvalidMessages": []
-				},
-				{
-					"Name": "merchant_city",
+					"Name": "card_type",
 					"OriginDataTypeName": {
 						"TypeName": "string",
 						"IsComplexType": false,
@@ -113,7 +64,44 @@
 					"DeltaFormatInvalidMessages": []
 				},
 				{
-					"Name": "merchant_state",
+					"Name": "card_number",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "expires",
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "cvv",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "has_chip",
 					"OriginDataTypeName": {
 						"TypeName": "string",
 						"IsComplexType": false,
@@ -126,7 +114,7 @@
 					"DeltaFormatInvalidMessages": []
 				},
 				{
-					"Name": "zip",
+					"Name": "num_cards_issued",
 					"OriginDataTypeName": {
 						"TypeName": "long",
 						"IsComplexType": false,
@@ -138,7 +126,7 @@
 					"DeltaFormatInvalidMessages": []
 				},
 				{
-					"Name": "mcc",
+					"Name": "credit_limit",
 					"OriginDataTypeName": {
 						"TypeName": "long",
 						"IsComplexType": false,
@@ -150,7 +138,33 @@
 					"DeltaFormatInvalidMessages": []
 				},
 				{
-					"Name": "errors",
+					"Name": "acct_open_date",
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "year_pin_last_changed",
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "card_on_dark_web",
 					"OriginDataTypeName": {
 						"TypeName": "string",
 						"IsComplexType": false,
@@ -169,7 +183,7 @@
 				"FormatType": "csv",
 				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
 				"Properties": {
-					"path": "abfss://financial-transaction-data@financialtransactiondt.dfs.core.windows.net/transformed-data/transactions_transformed/part-00000-tid-6741079480897189464-c425683e-3c02-41e9-a79e-7edde1a4f798-55-1-c000.csv",
+					"path": "abfss://financial-transaction-data@financialtransactiondt.dfs.core.windows.net/transformed-data/cards_data_transformed/part-00000-tid-819323885594652519-ac4eb869-127e-4769-8f90-ab9f23e125fa-102-1-c000.csv",
 					"delimiter": ",",
 					"multiLine": "false",
 					"firstRowAsHeader": "true",
@@ -180,7 +194,7 @@
 			},
 			"Source": {
 				"Provider": "ADLS",
-				"Location": "abfss://financial-transaction-data@financialtransactiondt.dfs.core.windows.net/transformed-data/transactions_transformed/part-00000-tid-6741079480897189464-c425683e-3c02-41e9-a79e-7edde1a4f798-55-1-c000.csv",
+				"Location": "abfss://financial-transaction-data@financialtransactiondt.dfs.core.windows.net/transformed-data/cards_data_transformed/part-00000-tid-819323885594652519-ac4eb869-127e-4769-8f90-ab9f23e125fa-102-1-c000.csv",
 				"Properties": {
 					"LinkedServiceName": "financial-transaction-sa1-WorkspaceDefaultStorage",
 					"LocationSetToDatabaseDefault": false
@@ -188,7 +202,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{}}"
 			},
 			"Compressed": false,
