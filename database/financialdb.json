@@ -1,0 +1,22 @@
+{
+	"name": "financialdb",
+	"properties": {
+		"Name": "financialdb",
+		"EntityType": "DATABASE",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"IsSyMSCDMDatabase": true
+		},
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://financial-transaction-data@financialtransactiondt.dfs.core.windows.net/financialdb",
+			"Properties": {
+				"FormatType": "csv",
+				"LinkedServiceName": "financial-transaction-sa1-WorkspaceDefaultStorage"
+			}
+		}
+	},
+	"type": "DATABASE"
+}

@@ -1,0 +1,208 @@
+{
+	"name": "transactions_transformed",
+	"properties": {
+		"Name": "transactions_transformed",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "financialdb"
+		},
+		"Description": "",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "id",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "date",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "client_id",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "card_id",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "amount",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "use_chip",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 8000,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "merchant_id",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "merchant_city",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 8000,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "merchant_state",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 8000,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "zip",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "mcc",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "errors",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 8000,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://financial-transaction-data@financialtransactiondt.dfs.core.windows.net/transformed-data/transactions_transformed/part-00000-tid-6741079480897189464-c425683e-3c02-41e9-a79e-7edde1a4f798-55-1-c000.csv",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "true",
+					"serialization.format": "1",
+					"FormatTypeSetToDatabaseDefault": false,
+					"header": "true"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://financial-transaction-data@financialtransactiondt.dfs.core.windows.net/transformed-data/transactions_transformed/part-00000-tid-6741079480897189464-c425683e-3c02-41e9-a79e-7edde1a4f798-55-1-c000.csv",
+				"Properties": {
+					"LinkedServiceName": "financial-transaction-sa1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": false
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"Description": "",
+			"DisplayFolderInfo": "{\"name\":\"Others\",\"colorCode\":\"\"}",
+			"PrimaryKeys": "",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}
