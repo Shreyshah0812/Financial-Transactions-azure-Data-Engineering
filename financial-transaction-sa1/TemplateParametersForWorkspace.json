@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"value": "financial-transaction-sa1"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"financial-transaction-sa1-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:financial-transaction-sa1.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://financialtransactiondt.dfs.core.windows.net/"
+		},
+		"User_dataHTTP_properties_typeProperties_url": {
+			"value": "https://media.githubusercontent.com/media/Shreyshah0812/Financial-Transactions-azure-Data-Engineering/refs/heads/master/users_data.csv"
+		},
+		"cards_dataHTTP_properties_typeProperties_url": {
+			"value": "https://media.githubusercontent.com/media/Shreyshah0812/Financial-Transactions-azure-Data-Engineering/refs/heads/master/cards_data.csv"
+		},
+		"financial-transaction-sa1-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://financialtransactiondt.dfs.core.windows.net"
+		},
+		"mcc_codesHTTP_properties_typeProperties_url": {
+			"value": "https://github.com/Shreyshah0812/Financial-Transactions-azure-Data-Engineering/raw/refs/heads/master/mcc_codes.json"
+		},
+		"transactionHTTP_properties_typeProperties_url": {
+			"value": "https://media.githubusercontent.com/media/Shreyshah0812/Financial-Transactions-azure-Data-Engineering/refs/heads/master/transactions_data.csv"
+		}
+	}
+}
